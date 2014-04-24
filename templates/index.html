@@ -16,45 +16,38 @@
 </head>
 <body>
 
-  <div class="row">
-    <div class="large-12 columns">
-      <!--Jinja example -->
-      <h2>Welcome to {{ name }}!</h2>
-      <hr />
-    </div>
-  </div>
 
+
+<nav class="top-bar" data-topbar> <ul class="title-area"> <li class="name"> <h1><a href="#">{{ name }}</a></h1> </li> <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li> </ul> <section class="top-bar-section">
+
+<!-- Left Nav Section --> <ul class="left">
+<li> <a href="//github.com/acecodes/acescrape">Github repo</a></li>
+<li><a href="//acecodes.net">Author blog</a></li> </ul> </section> </nav>
+
+<br /> 
   <div class="row">
     <div class="large-8 columns">
-      <h3>Overview</h3>
 
       <div class="row">
         <div class="large-12 columns">
           <div class="panel">
             <p>This app collects information from various websites and presents it in a (hopefully) entertaining manner. It is also currently under construction.</p>
+
           </div>
+        {% for letters in my_string %}
+          {{ letters }}<br />
+        {% endfor %}
         </div>
       </div>
-
-
-      <h3>Front page of Reddit:</h3>
-      <h3>--Place holder--</h3>
-
+     
     </div>
 
-    <div class="large-4 columns">
-
-      <h4>Links</h4>
-      <ul class="disc">
-        <li> <a href="//github.com/acecodes/acescrape">Github repo</a><br />See how the magic happens...</li>
-        <li><a href="//acecodes.net">Author blog</a><br />A pretty kick-ass blog, if I do say so myself.</li>
-      </ul>
-    </div>
   </div>
   
   <script src="{{ url_for('static', filename='js/vendor/zepto.js') }}"></script>
   <script src="{{ url_for('static', filename='js/vendor/jquery.js') }}"></script>
   <script src="{{ url_for('static', filename='js/foundation.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/foundation/topbar.js') }}"></script>
   <script>$('h2').append('<p>A humble website scraper.</p>');</script>
   <script>
     $(document).foundation();
