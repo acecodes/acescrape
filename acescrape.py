@@ -9,12 +9,11 @@ from flask import render_template
 class site_to_be_scraped:
 	def __init__(self, url):
 		self.url = url
+		data = urllib.request.urlopen(url)
+		soup = BeautifulSoup(data)
+		body = soup.get_text()
 
-	data = urllib.request.urlopen(self.url)
-	soup = BeautifulSoup(data)
-	body = soup.get_text()
-
-Reddit = site_to_be_scraped('www.reddit.com')
+Reddit = site_to_be_scraped('http://www.reddit.com')
 
 
 app = Flask(__name__)
