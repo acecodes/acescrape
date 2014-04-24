@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>AceScrape</title>
+
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/foundation.css') }}" />
+  
+
+  <script src="{{ url_for('static', filename='js/vendor/custom.modernizr.js') }}"></script>
+
+</head>
+<body>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <!--Jinja example -->
+      <h2>Welcome to {{ name }}!</h2>
+      <hr />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-8 columns">
+      <h3>The Grid</h3>
+
+      <!-- Grid Example -->
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="panel">
+            <p>This app collects information from various websites and presents it in a (hopefully) entertaining manner. It is also currently under construction.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <h3>Front page of Reddit:</h3>
+
+    </div>
+
+    <div class="large-4 columns">
+
+      <h4>Links</h4>
+      <ul class="disc">
+        <li> <a href="//github.com/acecodes/acescrape">Github repo</a><br />See how the magic happens...</li>
+        <li><a href="//acecodes.net">Author blog</a><br />A pretty kick-ass blog, if I do say so myself.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <script src="{{ url_for('static', filename='js/vendor/zepto.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/vendor/jquery.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/foundation.min.js') }}"></script>
+  <script>$('h2').append('<p>A humble website scraper.</p>');</script>
+  <script>
+    $(document).foundation();
+  </script>
+</body>
+</html>

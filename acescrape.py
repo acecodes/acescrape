@@ -1,18 +1,31 @@
 from bs4 import BeautifulSoup
 import os
-import unittest
 import urllib.request
 import re
 from flask import Flask
+from flask import render_template
 
-url = 'http://www.reddit.com'
-data = urllib.request.urlopen(url)
-soup = BeautifulSoup(data)
-body = soup.get_text()
+# Scraping parameters
+class site_to_be_scraped:
+	def __init__(self, url):
+		self.url = url
+
+	data = urllib.request.urlopen(self.url)
+	soup = BeautifulSoup(data)
+	body = soup.get_text()
+
+Reddit = site_to_be_scraped('www.reddit.com')
+
 
 app = Flask(__name__)
 
 @app.route('/')
-def title():
-	return '<h1>AceScrape!</h1>'
+def front_page(name='AceScrape'):
+	return render_template('index.html', name=name)
+
+
+
+if __name__ == '__main__':
+	app.run(debug=True)
+
 

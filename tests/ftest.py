@@ -1,24 +1,16 @@
 # Functional testing
-
-from bs4 import BeautifulSoup
+from selenium import webdriver
 import unittest
-import urllib.request
-import re
-
-url = 'http://www.reddit.com'
-data = urllib.request.urlopen(url)
-soup = BeautifulSoup(data)
-body = soup.get_text()
+import time
 
 class FuncTest(unittest.TestCase):
 	
-	def test_title(self):
-		assert 'reddit' in soup.title.string
-		print(soup.title.string)
-
-	def test_subreddits(self):
-		assert 
+	def test_server_up(self):
+		self.browser = webdriver.Firefox()
+		self.browser.implicitly_wait(3)
+		self.browser.get('http://localhost:5000/')
+		time.sleep(5) # Use for degugging connection problems
+		self.browser.quit()
 
 if __name__ == '__main__':
-	print('\n')
 	unittest.main()
