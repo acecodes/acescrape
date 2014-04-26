@@ -17,14 +17,14 @@ class site_to_be_scraped:
 		return re.findall(string, self.body)
 
 Reddit = site_to_be_scraped('http://www.reddit.com')
-my_string = Reddit.regex(r'/r/[a-z]+[^1234567890][^comments][^share]')
+subreddits = Reddit.regex(r'/r/[a-z]+[^1234567890][^comments][^share]')
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def front_page(name='AceScrape'):
-	return render_template('index.html', my_string=my_string, name=name)
+	return render_template('index.html', subreddits=subreddits, name=name)
 
 if __name__ == '__main__':
 	app.run(debug=True)

@@ -26,17 +26,28 @@
 
 <br /> 
   <div class="row">
-    <div class="large-8 columns">
-
-      <div class="row">
-        <div class="large-12 columns">
+    <div class="large-12 columns">
           <div class="panel">
             <p>This app collects information from various websites and presents it in a (hopefully) entertaining manner. It is also currently under construction.</p>
-
           </div>
-        {% for letters in my_string %}
-          {{ letters }}<br />
+
+      <div class="row">
+        <div class="large-6 columns">
+          <div class="panel callout">
+          <h2>Front Page Subs</h2>
+            <p>Here are the subreddits that are currently featured on the front page of Reddit.</p>
+          </div>
+
+        {% for subs in subreddits %}
+          {{ subs }}<br />
         {% endfor %}
+        </div>
+
+            <div class="large-6 columns">
+          <div class="panel">
+            <p></p>
+          </div>
+          <!-- Insert another scraper here -->
         </div>
       </div>
      
@@ -48,7 +59,6 @@
   <script src="{{ url_for('static', filename='js/vendor/jquery.js') }}"></script>
   <script src="{{ url_for('static', filename='js/foundation.min.js') }}"></script>
   <script src="{{ url_for('static', filename='js/foundation/topbar.js') }}"></script>
-  <script>$('h2').append('<p>A humble website scraper.</p>');</script>
   <script>
     $(document).foundation();
   </script>
