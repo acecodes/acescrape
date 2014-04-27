@@ -37,17 +37,23 @@
           <h2>Front Page Subs</h2>
             <p>Here are the subreddits that are currently featured on the front page of Reddit.</p>
           </div>
-
+        <div class="panel callout content">
         {% for subs in subreddits %}
-          {{ subs }}<br />
+          <p class="subreddits">{{ subs|safe }}</p>
         {% endfor %}
+        </div>
         </div>
 
             <div class="large-6 columns">
-          <div class="panel">
-            <p></p>
+            <div class="panel callout">
+          <h2>Front Page Images</h2>
+            <p>Here are thumbnails of each image currently featured on the front page of Reddit.</p>
           </div>
-          <!-- Insert another scraper here -->
+<div class="panel callout content">
+        {% for thumbs in images %}
+          <span class="thumbs">{{ thumbs|safe }}</span>
+        {% endfor %}
+        </div>
         </div>
       </div>
      

@@ -60,6 +60,13 @@ img {
 img {
   -ms-interpolation-mode: bicubic; }
 
+.thumbs img {
+
+  height:70px;
+  width:70px;
+  margin:15px;
+}
+
 #map_canvas img,
 #map_canvas embed,
 #map_canvas object,
@@ -99,6 +106,8 @@ textarea {
 
 select {
   width: 100%; }
+
+p.subreddits { margin-bottom:0px; text-align:center;}
 
 .row {
   width: 100%;
@@ -1938,6 +1947,7 @@ meta.foundation-mq-topbar {
         line-height: 1.4; }
     .panel.callout a:not(.button) {
       color: #008cba; }
+    .panel.callout.content { background: #E5FFCC; text-align:center;}
   .panel.radius {
     border-radius: 3px; }
 
