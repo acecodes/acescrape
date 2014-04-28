@@ -5265,18 +5265,22 @@ th.hide-for-touch {
 .touch th.show-for-touch {
   display: table-cell !important; }
 
+/* Custom CSS */
+
 .thumbs img {
 
   height:70px;
   width:70px;
-  margin:15px;
+  margin:10px;
   border:1px #1AA6FF solid;
 }
 
 h2.site { text-align:left; text-align:center;}
 img.logos {margin:10px 10px 20px 20px;}
 p.huge {font-size:21.5em; text-align:center; font-family:arial;}
-p.huge#techcrunch {color:#4D8F21;}
+
+@font-face { font-family: Money; src: url('/static/fonts/EcuyerR.TTF'); } 
+p.huge#techcrunch {color:#4D8F21; font-family: Money;}
 
 #reddit {background:#ecfaff; border-color:#b6edff;}
 .techcrunch a {color:#4D8F21;}
@@ -5286,3 +5290,4 @@ p.huge#techcrunch {color:#4D8F21;}
 .panel.callout.content#techcrunch {background:#E4F8D4; border-color:#9FDA07;}
 .panel.callout#techcrunch a:not(.button) {
       color:#4D8F21;
+
