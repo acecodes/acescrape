@@ -1,3 +1,6 @@
+@font-face { font-family: Money; src: url('/static/fonts/EcuyerR.TTF'); } 
+@font-face { font-family: Logo; src: url('/static/fonts/AllAges.ttf');}
+
 meta.foundation-version {
   font-family: "/5.2.2/"; }
 
@@ -1251,10 +1254,10 @@ meta.foundation-mq-topbar {
 
 .top-bar {
   overflow: hidden;
-  height: 45px;
+  height: 70px;
   line-height: 45px;
   position: relative;
-  background: #333333;
+  background: #162241;
   margin-bottom: 0; }
   .top-bar ul {
     margin-bottom: 0;
@@ -1278,12 +1281,14 @@ meta.foundation-mq-topbar {
     position: relative;
     margin: 0; }
   .top-bar .name {
+    text-align:center;
     height: 45px;
-    margin: 0;
+    margin-top: 1em;
     font-size: 16px; }
     .top-bar .name h1 {
+      font-family:Logo;
       line-height: 45px;
-      font-size: 1.0625rem;
+      font-size: 3.2625rem;
       margin: 0; }
       .top-bar .name h1 a {
         font-weight: normal;
@@ -1516,7 +1521,7 @@ meta.foundation-mq-topbar {
 
 @media only screen and (min-width: 40.063em) {
   .top-bar {
-    background: #243C83;
+    background: #162241;
     *zoom: 1;
     overflow: visible; }
     .top-bar:before, .top-bar:after {
@@ -1561,7 +1566,7 @@ meta.foundation-mq-topbar {
     .top-bar-section li:not(.has-form) a:not(.button) {
       padding: 0 15px;
       line-height: 45px;
-      background: #243C83; }
+      background: #000000; }
       .top-bar-section li:not(.has-form) a:not(.button):hover {
         background: #596896 }
     .top-bar-section li.active:not(.has-form) a:not(.button) {
@@ -5275,19 +5280,25 @@ th.hide-for-touch {
   border:1px #1AA6FF solid;
 }
 
-h2.site { text-align:left; text-align:center;}
-img.logos {margin:10px 10px 20px 20px;}
-p.huge {font-size:21.5em; text-align:center; font-family:arial;}
+.top-bar#sub { background-color:#243C83; text-align:center; height:40px; color:gray; padding-bottom:40px;}
+.top-bar#sub a { color:white; }
 
-@font-face { font-family: Money; src: url('/static/fonts/EcuyerR.TTF'); } 
 p.huge#techcrunch {color:#4D8F21; font-family: Money;}
 
+h2.site { text-align:left; text-align:center;}
+
+img.logos {display:block; margin:auto;}
+p.huge {font-size:21.5em; text-align:center; font-family:arial;}
+
+.panel.callout#intro {background:#9ADF20; border-color:#9FDA07;}
+
 #reddit {background:#ecfaff; border-color:#b6edff;}
-.techcrunch a {color:#4D8F21;}
 .panel.callout.content#reddit {background:#ecfaff; border-color:#b6edff;}
 
 #techcrunch {background:#E4F8D4; border-color:#9FDA07;}
 .panel.callout.content#techcrunch {background:#E4F8D4; border-color:#9FDA07;}
 .panel.callout#techcrunch a:not(.button) {
       color:#4D8F21;
+
+
 
