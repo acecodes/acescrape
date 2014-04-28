@@ -11,7 +11,7 @@ class site_to_be_scraped:
 		self.url = url
 		self.data = urllib.request.urlopen(url)
 		self.soup = BeautifulSoup(self.data)
-		self.body = self.soup.prettify(formatter=None)
+		self.body = self.soup.get_text()
 
 	def regex(self, string):
 		return re.findall(string, self.body)
@@ -19,8 +19,10 @@ class site_to_be_scraped:
 # Instances
 Reddit = site_to_be_scraped('http://www.reddit.com')
 
+## Reddit ##
 # Front page subreddits
 subreddits_original = Reddit.soup.find_all("a", class_="subreddit hover may-blank")
+# Placed into a set to avoid duplicates (since sets do not allow multiple occurances of elements)
 subreddits = set(subreddits_original)
 
 # Front page images

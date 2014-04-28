@@ -60,13 +60,6 @@ img {
 img {
   -ms-interpolation-mode: bicubic; }
 
-.thumbs img {
-
-  height:70px;
-  width:70px;
-  margin:15px;
-}
-
 #map_canvas img,
 #map_canvas embed,
 #map_canvas object,
@@ -1523,7 +1516,7 @@ meta.foundation-mq-topbar {
 
 @media only screen and (min-width: 40.063em) {
   .top-bar {
-    background: #333333;
+    background: #243C83;
     *zoom: 1;
     overflow: visible; }
     .top-bar:before, .top-bar:after {
@@ -1568,9 +1561,9 @@ meta.foundation-mq-topbar {
     .top-bar-section li:not(.has-form) a:not(.button) {
       padding: 0 15px;
       line-height: 45px;
-      background: #333333; }
+      background: #243C83; }
       .top-bar-section li:not(.has-form) a:not(.button):hover {
-        background: #272727; }
+        background: #596896 }
     .top-bar-section li.active:not(.has-form) a:not(.button) {
       padding: 0 15px;
       line-height: 45px;
@@ -1947,7 +1940,7 @@ meta.foundation-mq-topbar {
         line-height: 1.4; }
     .panel.callout a:not(.button) {
       color: #008cba; }
-    .panel.callout.content { background: #E5FFCC; text-align:center;}
+    
   .panel.radius {
     border-radius: 3px; }
 
@@ -5271,3 +5264,17 @@ th.hide-for-touch {
 
 .touch th.show-for-touch {
   display: table-cell !important; }
+
+# Custom CSS
+.panel.callout.content { background:#DBF1FF; text-align:center;}
+
+.thumbs img {
+
+  height:70px;
+  width:70px;
+  margin:15px;
+  border:1px #1AA6FF solid;
+}
+
+h2.site { text-align:left; text-align:center;}
+img.logos {margin:10px 10px 20px 20px;}

@@ -34,9 +34,13 @@
       <div class="row">
         <div class="large-6 columns">
           <div class="panel callout">
-          <h2>Front Page Subs</h2>
+          <a href="//www.reddit.com"><img class="logos" src="static/img/reddit_logo.png"></a>
+          <select id="selectField">
+          <option value="option1">Front page subreddits</option>
+          <option value="option2">Front page images</option>
+           </select>
+          <div id="option1" class="reddit">
             <p>Here are the subreddits that are currently featured on the front page of Reddit.</p>
-          </div>
         <div class="panel callout content">
         {% for subs in subreddits %}
           <p class="subreddits">{{ subs|safe }}</p>
@@ -44,29 +48,31 @@
         </div>
         </div>
 
-            <div class="large-6 columns">
-            <div class="panel callout">
-          <h2>Front Page Images</h2>
+            <div id="option2" class="reddit">
             <p>Here are thumbnails of each image currently featured on the front page of Reddit.</p>
-          </div>
-<div class="panel callout content">
+            <div class="panel callout content">
         {% for thumbs in images %}
           <span class="thumbs">{{ thumbs|safe }}</span>
         {% endfor %}
+        </div>
+          </div>
+
+        </div>
         </div>
         </div>
       </div>
      
     </div>
 
-  </div>
   
   <script src="{{ url_for('static', filename='js/vendor/zepto.js') }}"></script>
   <script src="{{ url_for('static', filename='js/vendor/jquery.js') }}"></script>
   <script src="{{ url_for('static', filename='js/foundation.min.js') }}"></script>
   <script src="{{ url_for('static', filename='js/foundation/topbar.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/acescrape.js') }}"></script>
   <script>
     $(document).foundation();
+
   </script>
 </body>
 </html>
