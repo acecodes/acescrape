@@ -5265,9 +5265,6 @@ th.hide-for-touch {
 .touch th.show-for-touch {
   display: table-cell !important; }
 
-# Custom CSS
-.panel.callout.content { background:#DBF1FF; text-align:center;}
-
 .thumbs img {
 
   height:70px;
@@ -5278,3 +5275,14 @@ th.hide-for-touch {
 
 h2.site { text-align:left; text-align:center;}
 img.logos {margin:10px 10px 20px 20px;}
+p.huge {font-size:21.5em; text-align:center; font-family:arial;}
+p.huge#techcrunch {color:#4D8F21;}
+
+#reddit {background:#ecfaff; border-color:#b6edff;}
+.techcrunch a {color:#4D8F21;}
+.panel.callout.content#reddit {background:#ecfaff; border-color:#b6edff;}
+
+#techcrunch {background:#E4F8D4; border-color:#9FDA07;}
+.panel.callout.content#techcrunch {background:#E4F8D4; border-color:#9FDA07;}
+.panel.callout#techcrunch a:not(.button) {
+      color:#4D8F21;

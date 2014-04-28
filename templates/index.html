@@ -31,16 +31,18 @@
             <p>This app collects information from various websites and presents it in a (hopefully) entertaining manner. It is also currently under construction.</p>
           </div>
 
+ <!-- Reddit box -->
+
       <div class="row">
         <div class="large-6 columns">
-          <div class="panel callout">
+          <div id="reddit" class="panel callout">
           <a href="//www.reddit.com"><img class="logos" src="static/img/reddit_logo.png"></a>
-          <select id="selectField">
-          <option value="option1">Front page subreddits</option>
-          <option value="option2">Front page images</option>
+          <select id="selectField-reddit">
+          <option value="reddit1">Front page subreddits</option>
+          <option value="reddit2">Front page images</option>
            </select>
-          <div id="option1" class="reddit">
-            <p>Here are the subreddits that are currently featured on the front page of Reddit.</p>
+          <div id="reddit1" class="reddit">
+            <p>Here are the subreddits that are currently featured on the front page of <a href="//www.reddit.com">Reddit</a>.</p>
         <div class="panel callout content">
         {% for subs in subreddits %}
           <p class="subreddits">{{ subs|safe }}</p>
@@ -48,7 +50,7 @@
         </div>
         </div>
 
-            <div id="option2" class="reddit">
+            <div id="reddit2" class="reddit">
             <p>Here are thumbnails of each image currently featured on the front page of Reddit.</p>
             <div class="panel callout content">
         {% for thumbs in images %}
@@ -59,7 +61,33 @@
 
         </div>
         </div>
+
+ <!-- TechCrunch box -->
+
+
+        <div class="large-6 columns">
+          <div id="techcrunch" class="panel callout">
+          <a href="//www.techcrunch.com"><img class="logos" src="static/img/techcrunch_logo.png"></a>
+          <select id="selectField-techcrunch">
+          <option value="techcrunch1">VC mentions</option>
+           </select>
+          <div id="techcrunch1" class="techcrunch">
+            <p>This is how many times VCs (<b>V</b>enture <b>C</b>apitalists) are mentioned on the current front page of  <a id="techcrunch" href="//www.techcrunch.com">TechCrunch</a>.</p>
+        <div id="techcrunch" class="panel callout content">
+        {% if VCs %}
+          <p id="techcrunch" class="huge">{{ VCs }}</p>
+        {% else %}
+          <p id="techcrunch" class="huge">0</p>
+        {% endif%}
         </div>
+        </div>
+
+        </div>
+        </div>
+        </div>
+
+        </div>
+
       </div>
      
     </div>
