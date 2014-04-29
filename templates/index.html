@@ -39,9 +39,11 @@
           </div>
           <select id="selectField-reddit">
           <option value="reddit1">Subreddits</option>
-          <option value="reddit2">Images</option>
-          <option value="reddit3">Cuteness Index</option>
+          <option value="reddit2">Cuteness Index</option>
+          <option value="reddit3">Images</option>
+
            </select>
+ <!-- Subreddits -->
 
           <div id="reddit1" class="reddit">
             <p>Here are the subreddits that are currently featured on the front page of <a href="//www.reddit.com">Reddit</a>.</p>
@@ -52,16 +54,8 @@
         </div>
         </div>
 
-            <div id="reddit2" class="reddit">
-            <p>Here are thumbnails of each image currently featured on the front page of <a href="//www.reddit.com">Reddit</a>.</p>
-            <div class="panel callout content">
-        {% for thumbs in images %}
-          <span class="thumbs">{{ thumbs|safe }}</span>
-        {% endfor %}
-        </div>
-          </div>
-
-          <div id="reddit3" class="reddit">
+<!-- Cuteness Index -->
+          <div id="reddit2" class="reddit">
             <p>The Reddit Cuteness Index utilizes a highly sophisticated, top-secret algorithm to measure the amount of animal-induced cuteness that is present on <a href="//www.reddit.com">Reddit</a> at the moment.</p>
             <div class="panel callout content">
        {% if cuteness_index >= 3 %}
@@ -76,6 +70,18 @@
        {% endif %}
           </div>
           </div>
+
+ <!-- Images -->
+
+            <div id="reddit3" class="reddit">
+            <p>Here are thumbnails of each image currently featured on the front page of <a href="//www.reddit.com">Reddit</a>.</p>
+            <div class="panel callout content">
+        {% for thumbs in images %}
+          <span class="thumbs">{{ thumbs|safe }}</span>
+        {% endfor %}
+        </div>
+          </div>
+
         </div>
         </div>
 
@@ -88,9 +94,23 @@
           <a href="//www.techcrunch.com"><img class="logos" src="static/img/techcrunch_logo.png"></a>
           </div>
           <select id="selectField-techcrunch">
-          <option value="techcrunch1">VC Mentions</option>
+          <option value="techcrunch1">Writers</option>
+          <option value="techcrunch2">VC Mentions</option>
            </select>
+
+      <!-- Writers -->
+
           <div id="techcrunch1" class="techcrunch">
+            <p>Here's a breakdown of writers featured on <a id="techcrunch" href="//www.techcrunch.com">TechCrunch</a> right now.</p>
+        <div id="techcrunch" class="panel callout content">
+        {% for authors in writers %}
+          <p class="subreddits"><span id="writers" class="tctext">{{ authors[3:] }}</span> - <span id="numbers" class="tctext">{{ writers[authors] }} submissions</span></p>
+        {% endfor %}
+        </div>
+        </div>
+
+      <!-- VC Mentions -->
+          <div id="techcrunch2" class="techcrunch">
             <p>This is how many times VCs (<b>V</b>enture <b>C</b>apitalists) are mentioned on the current front page of  <a id="techcrunch" href="//www.techcrunch.com">TechCrunch</a>. Because it's all about <em>innovation</em> and <em>disruption</em> people!</p>
         <div id="techcrunch" class="panel callout content">
         {% if VCs >= 3 %}
@@ -103,6 +123,7 @@
           <p id="techcrunch" class="huge">0</p>
           <p class="money"><span id="disruption-announce" class="tctext"> Disruption level: </span><br /><span id="disruption-level" class="tctext">{{ disruption_levels(0) }}</span></p>
         {% endif%}
+
         </div>
         </div>
 

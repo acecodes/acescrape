@@ -75,6 +75,26 @@ class TechCrunch(ScrapeSite):
 		disruption_levels = ['2014 MySpace.', 'Getting Googley!', 'Twittergasm!!!']
 		return disruption_levels[level]
 
+	# Shows who is getting articles published on the front page of TC
+	def writers(self, raw=False):
+		writers_regex = self.regex(r'by [A-Z][a-z]+ [A-Z][a-z]+')
+		writers_seen = set(writers_regex)
+		writers = {}
+
+		for authors in writers_seen:
+			writers[authors] = 0
+
+		for authors in writers_regex:
+			if authors in writers:
+				writers[authors] += 1
+		
+		if raw == False:
+			return writers
+
+		else:
+			return writers_regex
+
+
 # Instances
 RedditScraper = Reddit()
 TCScraper = TechCrunch()
@@ -86,7 +106,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def front_page(name='AceScrape'):
-	return render_template('index.html', subreddits=RedditScraper.subreddits(), name=name, images=RedditScraper.images(), VCs=TCScraper.VCs(), disruption_levels=TCScraper.disruption, cuteness_levels=RedditScraper.cuteness, cuteness_index=RedditScraper.cuteness_index(), tagline=tagline)
+	return render_template('index.html', subreddits=RedditScraper.subreddits(), name=name, images=RedditScraper.images(), VCs=TCScraper.VCs(), disruption_levels=TCScraper.disruption, cuteness_levels=RedditScraper.cuteness, cuteness_index=RedditScraper.cuteness_index(), tagline=tagline, writers=TCScraper.writers())
 
 if __name__ == '__main__':
 	app.run(debug=True)

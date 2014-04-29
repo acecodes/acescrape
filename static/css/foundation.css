@@ -5314,6 +5314,8 @@ p.huge#techcrunch {color:#4D8F21; font-family: Reddit; text-align:center;}
 .tctext {font-family:Reddit;}
 .tctext#disruption-announce {font-size:0.7em; color:#000000;}
 .tctext#disruption-level {font-size:1.2em; color:#4D8F21;}
+.tctext#writers {font-size:1.2em; color:#4D8F21;}
+.tctext#numbers {font-size:0.9em; color:#000000;}
 .panel.callout.content#techcrunch {background:#E4F8D4; border-color:#9FDA07;}
 .panel.callout#techcrunch a:not(.button) {
       color:#4D8F21;} 
