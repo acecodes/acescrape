@@ -1,7 +1,6 @@
 from bs4 import BeautifulSoup
-import os
 import urllib.request
-import re
+from re import findall
 from flask import Flask
 from flask import render_template
 from jinja2 import Template
@@ -14,7 +13,7 @@ class site_to_be_scraped:
 		self.body = self.soup.get_text()
 
 	def regex(self, string):
-		return re.findall(string, self.body)
+		return findall(string, self.body)
 
 ## Reddit ##
 Reddit = site_to_be_scraped('http://www.reddit.com')
