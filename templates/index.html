@@ -64,15 +64,15 @@
           <div id="reddit3" class="reddit">
             <p>The Reddit Cuteness Index utilizes a highly sophisticated, top-secret algorithm to measure the amount of animal-induced cuteness that is present on <a href="//www.reddit.com">Reddit</a> at the moment.</p>
             <div class="panel callout content">
-       {% if cuteness_float >= 5 %}
+       {% if cuteness_index >= 3 %}
        <p id="cuteness" class="huge">{{ cuteness_index }}</p>
           <p class="cuteness"><span id="cuteness-announce" class="reddit-text"> Cuteness level: </span><br /><span id="cuteness-level" class="reddit-text">{{ cuteness_levels(2) }}</span></p>
-      {% elif cuteness_float >= 2.5 %}
+      {% elif cuteness_index >= 2 %}
       <p id="cuteness" class="huge">{{ cuteness_index }}</p>
-          <p class="cuteness">Cuteness level: <br />{{ cuteness_levels(1) }}</p>
+          <p class="cuteness"><span id="cuteness-announce" class="reddit-text"> Cuteness level: </span><br /><span id="cuteness-level" class="reddit-text">{{ cuteness_levels(1) }}</span></p>
       {% else %}
       <p id="cuteness" class="huge">{{ cuteness_index }}</p>
-          <p class="cuteness">Cuteness level: <br />{{ cuteness_levels(0) }}</p>
+          <p class="cuteness"><span id="cuteness-announce" class="reddit-text"> Cuteness level: </span><br /><span id="cuteness-level" class="reddit-text">{{ cuteness_levels(0) }}</span></p>
        {% endif %}
           </div>
           </div>
@@ -95,13 +95,13 @@
         <div id="techcrunch" class="panel callout content">
         {% if VCs >= 3 %}
           <p id="techcrunch" class="huge">{{ VCs }}</p>
-          <p class="money">Disruption level: <br />{{ disruption_levels(2) }}</p>
+          <p class="money"><span id="disruption-announce" class="tctext"> Disruption level: </span><br /><span id="disruption-level" class="tctext">{{ disruption_levels(2) }}</span></p>
         {% elif VCs >= 1 %}
           <p id="techcrunch" class="huge">{{ VCs }}</p>
-          <p class="money">Disruption level: <br />{{ disruption_levels(1) }}</p>
+          <p class="money"><span id="disruption-announce" class="tctext"> Disruption level: </span><br /><span id="disruption-level" class="tctext">{{ disruption_levels(1) }}</span></p>
         {% else %}
           <p id="techcrunch" class="huge">0</p>
-          <p class="money">Disruption level: <br />{{ disruption_levels(0) }}</p>
+          <p class="money"><span id="disruption-announce" class="tctext"> Disruption level: </span><br /><span id="disruption-level" class="tctext">{{ disruption_levels(0) }}</span></p>
         {% endif%}
         </div>
         </div>
