@@ -48,7 +48,7 @@ class Reddit(ScrapeSite):
 		for items in subreddits:
 			if 'aww' in items:
 				cuteness_finder = subreddits[items]
-		cuteness_index_original = 20/cuteness_finder
+		cuteness_index_original = len(subreddits)/cuteness_finder
 		cuteness_index = str(cuteness_index_original)
 		
 		if nonstr == False:

@@ -66,7 +66,7 @@
             <div class="panel callout content">
        {% if cuteness_float >= 5 %}
        <p id="cuteness" class="huge">{{ cuteness_index }}</p>
-          <p class="cuteness">Cuteness level: <br />{{ cuteness_levels(2) }}</p>
+          <p class="cuteness"><span id="cuteness-announce" class="reddit-text"> Cuteness level: </span><br /><span id="cuteness-level" class="reddit-text">{{ cuteness_levels(2) }}</span></p>
       {% elif cuteness_float >= 2.5 %}
       <p id="cuteness" class="huge">{{ cuteness_index }}</p>
           <p class="cuteness">Cuteness level: <br />{{ cuteness_levels(1) }}</p>
@@ -91,7 +91,7 @@
           <option value="techcrunch1">VC Mentions</option>
            </select>
           <div id="techcrunch1" class="techcrunch">
-            <p>This is how many times VCs (<b>V</b>enture <b>C</b>apitalists) are mentioned on the current front page of  <a id="techcrunch" href="//www.techcrunch.com">TechCrunch</a>.</p>
+            <p>This is how many times VCs (<b>V</b>enture <b>C</b>apitalists) are mentioned on the current front page of  <a id="techcrunch" href="//www.techcrunch.com">TechCrunch</a>. Because it's all about <em>innovation</em> and <em>disruption</em> people!</p>
         <div id="techcrunch" class="panel callout content">
         {% if VCs >= 3 %}
           <p id="techcrunch" class="huge">{{ VCs }}</p>

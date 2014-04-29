@@ -2837,7 +2837,7 @@ p {
   font-family: inherit;
   font-weight: normal;
   font-size: 1rem;
-  line-height: 1.4em;
+  line-height: 1.2em;
   margin-bottom: 1.25rem;
   text-rendering: optimizeLegibility; }
   p.lead {
@@ -5295,13 +5295,16 @@ h2.site { text-align:left; text-align:center;}
 img.logos {display:block; margin:auto;}
 p.huge {font-size:8.5em; text-align:center; font-family:arial; margin:0; padding:0;}
 
-p.huge#cuteness {font-family:Cuteness;}
+p.huge#cuteness {font-family:Cuteness; color:#2872C2;}
 .panel.callout p.money {color:#4D8F21; font-family:Money; font-size:2em; text-align:center;}
-.panel.callout p.cuteness {font-family:Calibri; font-size:2.5em; text-align:center;}
+.panel.callout p.cuteness {font-family:Reddit; font-size:2.5em; text-align:center;}
 .panel.callout#intro {background:#9ADF20; border-color:#9FDA07;}
 
 .reddit-text {font-family:Reddit;}
-.reddit-text#subs {font-size:1.2em;}
+.reddit-text#subs {font-size:1.2em; color:#2872C2;}
+.reddit-text#numbers {font-size:0.9em;}
+.reddit-text#cuteness-announce {font-size:0.7em; color:#2872C2;}
+.reddit-text#cuteness-level {font-size:1.2em; color:#DD2E2E;}
 #reddit {background:#ecfaff; border-color:#b6edff;}
 .panel.callout.content#reddit {background:#ecfaff; border-color:#b6edff;}
 
