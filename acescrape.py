@@ -22,21 +22,24 @@ class Reddit(ScrapeSite):
 		ScrapeSite.__init__(self, 'http://www.reddit.com')
 
 	# Walks through subreddits and returns a dictionary with the subs and how many of each are on the front page
-	def subreddits(self):
+	## "raw" flag for debugging
+	def subreddits(self, raw=False):
 		subreddits_search = self.soup.find_all("a", class_="subreddit hover may-blank")
-		subreddits_regex = findall(r'r/[a-z]+', str(subreddits_search))
+		subreddits_regex = findall(r'r/[a-z]+</a>', str(subreddits_search))
 		subreddits_seen = set(subreddits_regex)
 		subreddits = {}
-		count = 0
 
 		for items in subreddits_seen:
-			subreddits[items] = 1
+			subreddits[items] = 0
 
 		for items in subreddits_regex:
 			if items in subreddits:
 				subreddits[items] += 1
 
-		return subreddits
+		if raw == False:
+			return subreddits
+		else:
+			return subreddits_regex
 
 	# Calculates exactly how cute the front page of Reddit is, based on the number of /r/aww submissions that are present
 	def cuteness_index(self, nonstr=False):

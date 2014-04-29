@@ -19,7 +19,7 @@
 
 
 <nav class="top-bar" data-topbar><div class="name"><h1><a href="#">{{ name }}</a></h1>
-<p class="tagline">{{ tagline }}</p></div> </nav>
+</div> </nav>
 
 <nav id="sub" class="top-bar" data-topbar>
 <a href="//github.com/acecodes/acescrape">Github repo</a> | 
@@ -47,7 +47,7 @@
             <p>Here are the subreddits that are currently featured on the front page of <a href="//www.reddit.com">Reddit</a>.</p>
         <div class="panel callout content">
         {% for subs in subreddits %}
-          <p class="subreddits">{{ subs|safe }}</p>
+          <p class="subreddits"><span id="subs" class="reddit-text">{{ subs|safe }}</span> - <span id="numbers" class="reddit-text">{{ subreddits[subs] }} submissions</span></p>
         {% endfor %}
         </div>
         </div>

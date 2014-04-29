@@ -1,6 +1,8 @@
 @font-face { font-family: Money; src: url('/static/fonts/Cash Currency.ttf'); } 
 @font-face { font-family: Logo; src: url('/static/fonts/Titania-Regular.ttf');}
 @font-face { font-family: Cuteness; src: url('/static/fonts/Churli_cute5.ttf');}
+@font-face { font-family: Reddit; src: url('/static/fonts/RockoFLF.ttf');}
+
 
 
 meta.foundation-version {
@@ -1260,7 +1262,7 @@ meta.foundation-mq-topbar {
   line-height: 40px;
   position: relative;
   background: #162241;
-  margin-bottom: -5px; }
+}
   .top-bar ul {
     margin-bottom: 0;
     list-style: none; }
@@ -1295,7 +1297,7 @@ meta.foundation-mq-topbar {
       .top-bar .name h1 a {
         font-weight: normal;
         color: white;
-        width: 75%;
+        width: 100%;
         display: block;
         padding: 0 15px; }
   .top-bar .toggle-topbar {
@@ -2835,7 +2837,7 @@ p {
   font-family: inherit;
   font-weight: normal;
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.4em;
   margin-bottom: 1.25rem;
   text-rendering: optimizeLegibility; }
   p.lead {
@@ -5282,28 +5284,32 @@ th.hide-for-touch {
   border:1px #1AA6FF solid;
 }
 
-.top-bar#sub { background-color:#243C83; text-align:center; margin-top:16px; height:40px; color:gray; padding-bottom:40px;}
+.top-bar#sub { background-color:#243C83; text-align:center; margin-top:0px; height:40px; color:gray; padding-bottom:40px;}
+
 .top-bar#sub a { color:white; }
 
-p.huge#techcrunch {color:#4D8F21; font-family: Money; text-align:center;}
 p.tagline {background-color:#162241; font-family:Arial; color:#ffffff; font-size:13px;}
 
 h2.site { text-align:left; text-align:center;}
 
 img.logos {display:block; margin:auto;}
-p.huge {font-size:17.5em; text-align:center; font-family:arial; margin:0; padding:0;}
-p.huge#cuteness {font-family:Cuteness; font-size:14em;}
+p.huge {font-size:8.5em; text-align:center; font-family:arial; margin:0; padding:0;}
+
+p.huge#cuteness {font-family:Cuteness;}
 .panel.callout p.money {color:#4D8F21; font-family:Money; font-size:2em; text-align:center;}
 .panel.callout p.cuteness {font-family:Calibri; font-size:2.5em; text-align:center;}
 .panel.callout#intro {background:#9ADF20; border-color:#9FDA07;}
 
+.reddit-text {font-family:Reddit;}
+.reddit-text#subs {font-size:1.2em;}
 #reddit {background:#ecfaff; border-color:#b6edff;}
 .panel.callout.content#reddit {background:#ecfaff; border-color:#b6edff;}
 
 #techcrunch {background:#E4F8D4; border-color:#9FDA07;}
+p.huge#techcrunch {color:#4D8F21; font-family: Money; text-align:center;}
 .panel.callout.content#techcrunch {background:#E4F8D4; border-color:#9FDA07;}
 .panel.callout#techcrunch a:not(.button) {
-      color:#4D8F21;
+      color:#4D8F21;} 
 
 
 
