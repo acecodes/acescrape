@@ -5301,6 +5301,7 @@ p.huge#cuteness {font-family:Reddit; color:#2872C2;}
 
 /* Reddit styles */
 .reddit-text {font-family:Reddit;}
+.reddit-text#header {text-align:center;}
 .reddit-text#subs {font-size:1.2em; color:#2872C2;}
 .reddit-text#numbers {font-size:0.9em;}
 .reddit-text#cuteness-announce {font-size:0.7em; color:#2872C2;}
@@ -5320,5 +5321,20 @@ p.huge#techcrunch {color:#4D8F21; font-family: Reddit; text-align:center;}
 .panel.callout#techcrunch a:not(.button) {
       color:#4D8F21;} 
 
+/* Bloomberg styles */
+
+#bloomberg {background:#FFE8DD;border-color:#B92F04;}
+.panel.callout.content#bloomberg {background:#FFE8DD;border-color:#B92F04;}
+.bloomberg-caption {text-align:center; padding-top:0.7em;}
+.bloomtext {font-family:Reddit;}
+.bloomtext#index {color:#000000; font-size:1.3em;}
+.bloomtext#value {color:#757575;}
+.bloomtext#pos-change {color:#409610;}
+.bloomtext#neg-change {color:#BB0606;}
+
+
+/* Misc */
+
+.copyright {font-size:0.8em; text-align:center;}
 
 

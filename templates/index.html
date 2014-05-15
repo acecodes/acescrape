@@ -18,20 +18,21 @@
 
 
 
-<nav class="top-bar" data-topbar><div class="name"><h1><a href="#">{{ name }}</a></h1>
+<nav class="top-bar" data-topbar><div class="name"><h1><a href="#">{{ title }}</a></h1>
 </div> </nav>
 
 <nav id="sub" class="top-bar" data-topbar>
 <a href="//github.com/acecodes/acescrape">Github repo</a> | 
 <a href="//acecodes.net">Author blog</a></section> </nav>
-
-<br /> 
+<br />
   <div class="row">
+
     <div class="large-12 columns">
 
  <!-- Reddit box -->
 
       <div class="row">
+
         <div class="large-6 columns">
           <div id="reddit" class="panel callout">
           <div class="logos">
@@ -134,8 +135,9 @@
         </div>
 
       </div>
-     
-    </div>
+
+<h3 class="reddit-text" id="header">Next: <a href="finance">Finance Scrapers</a></h3>
+
 
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -149,13 +151,16 @@
 </script>
   
   <script src="{{ url_for('static', filename='js/vendor/zepto.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/vendor/jquery.js') }}"></script>
   <script src="{{ url_for('static', filename='js/foundation.min.js') }}"></script>
   <script src="{{ url_for('static', filename='js/foundation/topbar.js') }}"></script>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="{{ url_for('static', filename='js/acescrape.js') }}"></script>
   <script>
     $(document).foundation();
 
   </script>
+
+  <p class="copyright">Copyright 2014, <a href="//www.acecodes.net">Ace Eddleman</a></p>
 </body>
 </html>

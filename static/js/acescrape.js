@@ -18,4 +18,13 @@ $(document).ready(function () {
     });
 });
 
+// Change script for Bloomberg box
+$(document).ready(function () {
+    $('.bloomberg').hide();
+    $('#bloomberg1').show();
+    $('#selectField-bloomberg').change(function () {
+        $('.bloomberg').hide();
+        $('#'+$(this).val()).show();
+    });
+});
 
