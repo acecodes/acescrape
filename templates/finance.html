@@ -39,7 +39,7 @@
 
           <div class="logos">
           <a href="//www.bloomberg.com/markets"><img class="logos" src="static/img/bloomberg_logo.png"></a>
-          <p class="bloomberg-caption">Market data for the world's stock markets, from <a href="//www.bloomberg.com/markets">Bloomberg</a></p>
+          <p class="bloomberg-caption">Market data for the world's stock, futures and currency markets
 
           </div>
           <select id="selectField-bloomberg">
@@ -53,17 +53,24 @@
 
           <div id="bloomberg1" class="bloomberg">
         <div id="bloomberg" class="panel callout content">
+        <table align=center>
         {% for markets in stock_markets %}
-          <p class="subreddits"><span class="bloomtext" id="index"><b>{{ markets[0] }}</b></span>: <br /><span class="bloomtext" id="value" >{{ markets[1] }}</span> (
+          <tr>
           {% if '+' in markets[2] %}
-          <span class="bloomtext" id="pos-change"><b>{{ markets[2] }}</b></span>)</p>
+          <td id="pos" class="quotes">
           {% else %}
-          <span class="bloomtext" id="neg-change"><b>{{ markets[2] }}</b></span>)</p>
-
+          <td id="neg" class="quotes">
           {% endif %}
-        <br />
+          <span class="bloomtext" id="index"><b>{{ markets[0] }}</b></span><br /><span class="bloomtext" id="value" >{{ markets[1] }}</span>
+          {% if '+' in markets[2] %}
+          <span class="bloomtext" id="pos-change">(<b>{{ markets[2] }}</b>)</span></p>
+          {% else %}
+          <span class="bloomtext" id="neg-change">(<b>{{ markets[2] }}</b>)</span></p>
+          {% endif %}
+          </td>
+          </tr>
         {% endfor %}
-        </div>
+        </table>
         </div>
         </div>
 
@@ -71,16 +78,61 @@
           <div id="bloomberg2" class="bloomberg">
           
             <div id="bloomberg" class="panel callout content">
-          {% for markets in futures %}
-          <p class="subreddits"><span class="bloomtext" id="index"><b>{{ markets[0] }}</b></span>: <br /><span class="bloomtext" id="value" >{{ markets[1] }}</span> (
-          {% if '+' in markets[2] %}
-          <span class="bloomtext" id="pos-change"><b>{{ markets[2] }}</b></span>)</p>
-          {% else %}
-          <span class="bloomtext" id="neg-change"><b>{{ markets[2] }}</b></span>)</p>
+            <table align=center>
 
+          <tr>
+          {% for markets in futures[0:2] %}
+         {% if '+' in markets[2] %}
+          <td id="pos" class="small-quotes">
+          {% else %}
+          <td id="neg" class="small-quotes">
           {% endif %}
-        <br />
-        {% endfor %}
+          <span class="bloomtext" id="index"><b>{{ markets[0] }}</b></span><br /><br /><span class="bloomtext" id="value" >{{ markets[1] }}</span><br />
+         {% if '+' in markets[2] %}
+          <span class="bloomtext" id="pos-change">(<b>{{ markets[2] }}</b>)</span></p>
+          {% else %}
+          <span class="bloomtext" id="neg-change">(<b>{{ markets[2] }}</b>)</span></p>
+          {% endif %}
+          </td>
+          {% endfor %}
+          </tr>
+
+
+          <tr>
+          {% for markets in futures[2:4] %}
+          {% if '+' in markets[2] %}
+          <td id="pos" class="small-quotes">
+          {% else %}
+          <td id="neg" class="small-quotes">
+          {% endif %}
+           <span class="bloomtext" id="index"><b>{{ markets[0] }}</b></span><br /><br /><span class="bloomtext" id="value" >{{ markets[1] }}</span><br />
+          {% if '+' in markets[2] %}
+          <span class="bloomtext" id="pos-change">(<b>{{ markets[2] }}</b>)</span></p>
+          {% else %}
+          <span class="bloomtext" id="neg-change">(<b>{{ markets[2] }}</b>)</span></p>
+          {% endif %}
+          </td>
+          {% endfor %}
+          </tr>
+
+          <tr>
+          {% for markets in futures[5:7] %}
+          {% if '+' in markets[2] %}
+          <td id="pos" class="small-quotes">
+          {% else %}
+          <td id="neg" class="small-quotes">
+          {% endif %}
+           <span class="bloomtext" id="index"><b>{{ markets[0] }}</b></span><br /><br /><span class="bloomtext" id="value" >{{ markets[1] }}</span><br />
+         {% if '+' in markets[2] %}
+          <span class="bloomtext" id="pos-change">(<b>{{ markets[2] }}</b></span>)</p>
+          {% else %}
+          <span class="bloomtext" id="neg-change">(<b>{{ markets[2] }}</b></span>)</p>
+          {% endif %}
+          </td>
+          {% endfor %}
+          </tr>
+
+        </table>
           </div>
           </div>
 
@@ -89,16 +141,62 @@
             <div id="bloomberg3" class="bloomberg">
           
             <div id="bloomberg" class="panel callout content">
-          {% for markets in currencies %}
-          <p class="subreddits"><span class="bloomtext" id="index"><b>{{ markets[0] }}</b></span>: <br /><span class="bloomtext" id="value" >{{ markets[1] }}</span> (
-          {% if '+' in markets[2] %}
-          <span class="bloomtext" id="pos-change"><b>{{ markets[2] }}</b></span>)</p>
-          {% else %}
-          <span class="bloomtext" id="neg-change"><b>{{ markets[2] }}</b></span>)</p>
+            
 
+          <table align=center>
+          <tr>
+          {% for markets in currencies[0:3] %}
+          {% if '+' in markets[2] %}
+          <td id="pos" class="small-quotes">
+          {% else %}
+          <td id="neg" class="small-quotes">
           {% endif %}
-        <br />
-        {% endfor %}
+          <span class="bloomtext" id="index"><b>{{ markets[0] }}</b></span><br /><br /><span class="bloomtext" id="value" >{{ markets[1] }}</span><br />
+           {% if '+' in markets[2] %}
+          <span class="bloomtext" id="pos-change">(<b>{{ markets[2] }}</b>)</span></p>
+          {% else %}
+          <span class="bloomtext" id="neg-change">(<b>{{ markets[2] }}</b>)</span></p>
+          {% endif %}
+          </td>
+          {% endfor %}
+          </tr>
+
+          <tr>
+          {% for markets in currencies[4:7] %}
+          {% if '+' in markets[2] %}
+          <td id="pos" class="small-quotes">
+          {% else %}
+          <td id="neg" class="small-quotes">
+          {% endif %}
+           <span class="bloomtext" id="index"><b>{{ markets[0] }}</b></span><br /><br /><span class="bloomtext" id="value" >{{ markets[1] }}</span><br />
+           {% if '+' in markets[2] %}
+          <span class="bloomtext" id="pos-change">(<b>{{ markets[2] }}</b>)</span></p>
+          {% else %}
+          <span class="bloomtext" id="neg-change">(<b>{{ markets[2] }}</b>)</span></p>
+          {% endif %}
+          </td>
+          {% endfor %}
+          </tr>
+
+          <tr>
+          {% for markets in currencies[7:10] %}
+          {% if '+' in markets[2] %}
+          <td id="pos" class="small-quotes">
+          {% else %}
+          <td id="neg" class="small-quotes">
+          {% endif %}
+           <span class="bloomtext" id="index"><b>{{ markets[0] }}</b></span><br /><br /><span class="bloomtext" id="value" >{{ markets[1] }}</span><br />
+           {% if '+' in markets[2] %}
+          <span class="bloomtext" id="pos-change">(<b>{{ markets[2] }}</b>)</span></p>
+          {% else %}
+          <span class="bloomtext" id="neg-change">(<b>{{ markets[2] }}</b>)</span></p>
+          {% endif %}
+          </td>
+          {% endfor %}
+          </tr>
+
+
+        </table>
         </div>
           </div>
 

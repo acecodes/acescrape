@@ -116,7 +116,7 @@ class BloombergMarkets(ScrapeSite):
 
 		# Creates individualized tuples for each marketplace
 		stock_markets = tuple(full_table[:8])
-		currencies = tuple(full_table[16:])
+		currencies = tuple(full_table[17:])
 		futures = tuple(full_table[9:16])
 
 		if market_choice == 'stock_markets':
