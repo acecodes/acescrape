@@ -25,7 +25,7 @@ class Reddit(ScrapeSite):
 	## "raw" flag for debugging
 	def subreddits(self, raw=False):
 		subreddits_search = self.soup.find_all("a", class_="subreddit hover may-blank")
-		subreddits_regex = findall(r'r/[a-z]+</a>', str(subreddits_search))
+		subreddits_regex = findall(r'r\/[a-z]+', str(subreddits_search))
 		subreddits_seen = set(subreddits_regex)
 		subreddits = {}
 
@@ -67,7 +67,7 @@ class TechCrunch(ScrapeSite):
 
 	# Number of times VCs are mentioned on TC's front page
 	def VCs(self):
-		vc_word_search = self.regex(r'VC[s]?')
+		vc_word_search = self.regex(r'(?:VC[s]?|[Vv]enture [Cc]apital[ist]?)')
 		return len(vc_word_search)
 
 	# Measures how disruptive, innovative and/or Twittergasmic TC is at the time

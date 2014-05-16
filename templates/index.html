@@ -50,7 +50,7 @@
             <p>Here are the subreddits that are currently featured on the front page of <a href="//www.reddit.com">Reddit</a>.</p>
         <div class="panel callout content">
         {% for subs in subreddits %}
-          <p class="subreddits"><span id="subs" class="reddit-text">{{ subs|safe }}</span> - <span id="numbers" class="reddit-text">{{ subreddits[subs] }} {% if subreddits[subs] > 1 %} submissions {% else %} submission {% endif %}</span></p>
+          <p class="subreddits"><span id="subs" class="reddit-text"><a href="//www.reddit.com/{{ subs|safe }}">{{ subs|safe }}</a></span> - <span id="numbers" class="reddit-text">{{ subreddits[subs] }} {% if subreddits[subs] > 1 %} submissions {% else %} submission {% endif %}</span></p>
         {% endfor %}
         </div>
         </div>
