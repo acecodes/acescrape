@@ -10,8 +10,8 @@ This app scrapes various sites for different content, then returns it in a beaut
 
 This web app is currently a work in progress. Please check [the website][5] frequently to see how it evolves.
 
-  [1]: acescrape.com
-  [2]: reddit.com
-  [3]: techcrunch.com
-  [4]: bloomberg.com
-  [5]: acescrape.com
+  [1]: //www.acescrape.com
+  [2]: //www.reddit.com
+  [3]: //www.techcrunch.com
+  [4]: //www.bloomberg.com
+  [5]: //www.acescrape.com
