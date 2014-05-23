@@ -77,16 +77,22 @@ class TechCrunch(ScrapeSite):
 
 	# Shows who is getting articles published on the front page of TC
 	def writers(self, raw=False):
-		writers_regex = self.regex(r'by [A-Z][a-z]+ [A-Z][a-z]+')
-		writers_seen = set(writers_regex)
+		writers_regex = self.soup.find_all('a', {"rel":"author"})
+		writers_list = []
+		writers_seen = set()
+
+		for authors in writers_regex:
+			writers_list.append([authors.get_text(), authors.get('href')])
+			writers_seen.add(authors.get_text())
+		
 		writers = {}
 
 		for authors in writers_seen:
 			writers[authors] = 0
 
 		for authors in writers_regex:
-			if authors in writers:
-				writers[authors] += 1
+			if authors.get_text() in writers:
+				writers[authors.get_text()] += 1
 		
 		if raw == False:
 			return writers
