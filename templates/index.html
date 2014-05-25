@@ -104,8 +104,8 @@
           <div id="techcrunch1" class="techcrunch">
             <p>Here's a breakdown of writers featured on <a id="techcrunch" href="//www.techcrunch.com">TechCrunch</a> right now.</p>
         <div id="techcrunch" class="panel callout content">
-        {% for authors in writers %}
-          <p class="subreddits"><span id="writers" class="tctext"><a href="http://www.techcrunch.com{{ authors[1] }}">{{ authors[0] }}</a></span> - <span id="numbers" class="tctext">{{ writers[authors] }} {% if writers[authors] > 1 %} articles {% else %} article {% endif %}</span></p>
+        {% for authors, links in writers %}
+          <p class="subreddits"><span id="writers" class="tctext"><a href="http://www.techcrunch.com{{ links }}">{{ authors }}</a></span> - <span id="numbers" class="tctext">{{ writers[authors, links] }} {% if writers[authors, links] > 1 %} articles {% else %} article {% endif %}</span></p>
         {% endfor %}
         </div>
         </div>

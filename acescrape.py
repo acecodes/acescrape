@@ -91,14 +91,15 @@ class TechCrunch(ScrapeSite):
 			writers[authors] = 0
 
 		for authors in writers_regex:
-			if authors.get_text() in writers:
-				writers[authors.get_text()] += 1
+			if authors.get_text() in writers_list:
+				writers[authors.get_text(), authors.get('href')] += 1
 		
 		if raw == False:
 			return writers
 
 		else:
 			return writers_regex
+
 
 ## Bloomberg Markets ##
 class BloombergMarkets(ScrapeSite):
