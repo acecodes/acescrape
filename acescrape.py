@@ -82,8 +82,8 @@ class TechCrunch(ScrapeSite):
 		writers_seen = set()
 
 		for authors in writers_regex:
-			writers_list.append([authors.get_text(), authors.get('href')])
-			writers_seen.add(authors.get_text())
+			writers_list.append(authors.get_text())
+			writers_seen.add((authors.get_text(), authors.get('href')))
 		
 		writers = {}
 
