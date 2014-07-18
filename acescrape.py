@@ -4,6 +4,9 @@ from re import findall
 from flask import Flask
 from flask import render_template
 from jinja2 import Template
+import time
+
+year = time.strftime("%Y")
 
 class ScrapeSite:
 	def __init__(self, url):
@@ -149,7 +152,7 @@ title = 'AceScrape'
 
 @app.context_processor
 def site_info():
-	return {'title':title, 'tagline':tagline}
+	return {'title':title, 'tagline':tagline, 'year':year}
 
 @app.route('/')
 def front_page():
