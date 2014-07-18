@@ -136,8 +136,6 @@ class BloombergMarkets(ScrapeSite):
 			return stock_markets, currencies, futures
 
 
-
-
 # Instances
 RedditScraper = Reddit()
 TCScraper = TechCrunch()
@@ -149,13 +147,17 @@ tagline = "Scraping only the finest data"
 app = Flask(__name__)
 title = 'AceScrape'
 
+@app.context_processor
+def site_info():
+	return {'title':title, 'tagline':tagline}
+
 @app.route('/')
 def front_page():
-	return render_template('index.html', subreddits=RedditScraper.subreddits(), images=RedditScraper.images(), VCs=TCScraper.VCs(), disruption_levels=TCScraper.disruption, cuteness_levels=RedditScraper.cuteness, cuteness_index=RedditScraper.cuteness_index(), tagline=tagline, writers=TCScraper.writers(),title=title)
+	return render_template('index.html', subreddits=RedditScraper.subreddits(), images=RedditScraper.images(), VCs=TCScraper.VCs(), disruption_levels=TCScraper.disruption, cuteness_levels=RedditScraper.cuteness, cuteness_index=RedditScraper.cuteness_index(), writers=TCScraper.writers())
 
 @app.route('/finance')
 def finance_page():
-	return render_template('finance.html', stock_markets=BMScraper.pull_data('stock_markets'), futures=BMScraper.pull_data('futures'), currencies=BMScraper.pull_data('currencies'), tagline=tagline, title=title)
+	return render_template('finance.html', stock_markets=BMScraper.pull_data('stock_markets'), futures=BMScraper.pull_data('futures'), currencies=BMScraper.pull_data('currencies'))
 
 if __name__ == '__main__':
 	app.run(debug=True)
