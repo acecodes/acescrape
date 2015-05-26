@@ -3,7 +3,6 @@ import urllib.request
 from re import findall
 from flask import Flask
 from flask import render_template
-from jinja2 import Template
 import time
 
 year = time.strftime("%Y")
@@ -44,7 +43,7 @@ class Reddit(ScrapeSite):
             if items in subreddits:
                 subreddits[items] += 1
 
-        if raw == False:
+        if raw is False:
             return subreddits
         else:
             return subreddits_regex
@@ -108,7 +107,7 @@ class TechCrunch(ScrapeSite):
             if authors.get_text() in writers_list:
                 writers[authors.get_text(), authors.get('href')] += 1
 
-        if raw == False:
+        if raw is False:
             return writers
 
         else:
@@ -171,12 +170,22 @@ def site_info():
 
 @app.route('/')
 def front_page():
-    return render_template('index.html', subreddits=RedditScraper.subreddits(), images=RedditScraper.images(), VCs=TCScraper.VCs(), disruption_levels=TCScraper.disruption, cuteness_levels=RedditScraper.cuteness, cuteness_index=RedditScraper.cuteness_index(), writers=TCScraper.writers())
+    return render_template('index.html',
+                           subreddits=RedditScraper.subreddits(),
+                           images=RedditScraper.images(),
+                           VCs=TCScraper.VCs(),
+                           disruption_levels=TCScraper.disruption,
+                           cuteness_levels=RedditScraper.cuteness,
+                           cuteness_index=RedditScraper.cuteness_index(),
+                           writers=TCScraper.writers())
 
 
 @app.route('/finance')
 def finance_page():
-    return render_template('finance.html', stock_markets=BMScraper.pull_data('stock_markets'), futures=BMScraper.pull_data('futures'), currencies=BMScraper.pull_data('currencies'))
+    return render_template('finance.html',
+                           stock_markets=BMScraper.pull_data('stock_markets'),
+                           futures=BMScraper.pull_data('futures'),
+                           currencies=BMScraper.pull_data('currencies'))
 
 if __name__ == '__main__':
     app.run(debug=True)
