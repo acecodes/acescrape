@@ -5,6 +5,11 @@ from flask import Flask
 from flask import render_template
 import time
 
+tagline = "Scraping only the finest data"
+
+app = Flask(__name__)
+title = 'AceScrape'
+
 year = time.strftime("%Y")
 
 
@@ -19,15 +24,17 @@ class ScrapeSite:
     def regex(self, string):
         return findall(string, self.body)
 
-## Reddit ##
-
 
 class Reddit(ScrapeSite):
+    """
+    Scraper for Reddit
+    """
 
     def __init__(self):
         ScrapeSite.__init__(self, 'http://www.reddit.com')
 
-    # Walks through subreddits and returns a dictionary with the subs and how many of each are on the front page
+    # Walks through subreddits and returns a dictionary 
+    # with the subs and how many of each are on the front page
     # "raw" flag for debugging
     def subreddits(self, raw=False):
         subreddits_search = self.soup.find_all(
@@ -68,10 +75,11 @@ class Reddit(ScrapeSite):
     def images(self):
         return self.soup.find_all("a", class_="thumbnail")
 
-## TechCrunch ##
-
 
 class TechCrunch(ScrapeSite):
+    """
+    Scraper for TechCrunch
+    """
 
     def __init__(self):
         ScrapeSite.__init__(self, 'http://www.techcrunch.com')
@@ -114,8 +122,11 @@ class TechCrunch(ScrapeSite):
             return writers_regex
 
 
-## Bloomberg Markets ##
 class BloombergMarkets(ScrapeSite):
+    """
+    Scraper for Bloomberg
+    Requires constant updating...
+    """
 
     def __init__(self):
         ScrapeSite.__init__(self, 'http://www.bloomberg.com/markets/')
@@ -155,12 +166,6 @@ class BloombergMarkets(ScrapeSite):
 RedditScraper = Reddit()
 TCScraper = TechCrunch()
 BMScraper = BloombergMarkets()
-
-## Site ##
-tagline = "Scraping only the finest data"
-
-app = Flask(__name__)
-title = 'AceScrape'
 
 
 @app.context_processor
